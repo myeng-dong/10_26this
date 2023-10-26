@@ -1,0 +1,39 @@
+/*font css*/
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+/*서비스추천 하마찾기 커뮤니티 .... */
+h2{
+    font-family: 'Gowun Batang', serif;
+}
+
+/*포장 이사 개인PT 수학과외 웹디자인 ....*/
+h4{
+    font-family: 'Gowun Batang', serif;
+}
+
+/*gnb메뉴, 커뮤니티 카테고리 */
+.community__cate__desc,
+li,
+.login_signup .login{
+    font-family: 'Gowun Batang', serif;
+}
+
+.main2 .container__main2 .section__main2 .information__main2 .item__main2 .box1__main2  .box1_head,
+.main2 .container__main2 .section__main2 .information__main2 .box3__main2{
+    font-family: 'Gowun Batang', serif;
+}
+
+
+/* 전체보기, 카테고리 폰트 사이즈 */
+.main1 .top__main1 .full__main1,
+.main2 .section__main2 .main2_head .full__main2,
+.main3 .community__main3 .community__menu .community__more .full__main3,
+.item__main3 .item__cate
+    {
+    font-size: small;
+    font-family: 'Gowun Batang', serif;
+    font-weight: bold;
+    }

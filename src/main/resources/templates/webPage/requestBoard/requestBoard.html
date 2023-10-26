@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/header}">
+<!--only_footer, header-->
+<th:block layout:fragment="css">
+    <link rel="stylesheet" th:href="@{/css/request_board/community__request.css}">
+    <link rel="stylesheet" th:href="@{/css/request_board/category.css}">
+    <link rel="stylesheet" th:href="@{/css/request_board/btn.css}">
+    <link rel="stylesheet" th:href="@{/css/request_board/maintop.css}">
+</th:block>
+<th:block layout:fragment="script">
+  <script type="module">
+    import { changeErrMsg, ajax } from '/js/common.js';
+
+    const getBoard = async ()
+  </script>
+</th:block>
+
+<div layout:fragment="content">
+  <body>
+  <button id="testBtn">Test</button>
+  <div class ="top__title__postlist_ask_hama">
+    <div class ="title__postlist_ask_hama">
+      <h2>요청 게시판</h2>
+      <h4>도움이 필요한 '주마'님들에게 견적서를 보내보세요!</h4>
+    </div>
+  </div>
+  <div class ="postlist_ask_hama">
+    <section class="community__postlist_ask_hama">
+
+      <div class="box1">
+        <div class="location">
+          <!--  -->
+          <div class="select">
+
+
+
+            <div class="select__search__form">
+              <input class="search__input" type="text" name="q" placeholder="주마 검색">
+              <button class="search__button" type="submit">검색</button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 받은 견적서 게시글 불러오는 부분. -->
+        <ul class="post-list" id="postList">
+        </ul>
+    </section>
+
+  </div>
+    <script src="/js/community_request.js"></script>
+  </body>
+</div>
+</div>
+</html>
