@@ -5,7 +5,7 @@
 }
 .main{
     grid-area: main;
-
+    font-family: 'GowunBatang-Regular';
 }
 .btn{
     width: 50px;

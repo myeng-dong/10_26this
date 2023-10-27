@@ -3,7 +3,7 @@ package com.kh.com.kh.domain.dao.entity;
 import lombok.Data;
 
 @Data
-public class WorkGive {
+public class WorkGiveAll {
   private Long board_id;
   private Long member_id;
   private String nickname;
@@ -11,5 +11,5 @@ public class WorkGive {
   private String area;
   private String hope_date;
   private String hope_text;
-  private Long work_id;
+
 }

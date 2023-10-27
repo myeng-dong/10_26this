@@ -51,7 +51,9 @@
   .title__postlist_ask_hama h2{
     padding-bottom: 20px;
   }
-
+.hope_text{
+    font-weight: bold;
+}
   /* 버튼 컨테이너 스타일 */
   .post .buttons {
   position: absolute;

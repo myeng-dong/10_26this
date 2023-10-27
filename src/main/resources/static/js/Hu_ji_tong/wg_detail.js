@@ -3,7 +3,8 @@ const $textarea = document.querySelector('.chat-text-box');
 const $btn = document.querySelector('.button');
 const $area_sub = document.getElementById('area_subcat');
 const url = 'http://localhost:9080/give/detail'
-        document.querySelector('.select_category').textContent =  '★ '+category+' ☆';
+        document.querySelector('.select_category').innerHTML =
+        '<i class="fa-solid fa-star" style="color: #ffd500;"></i> ' + category + ' <i class="fa-solid fa-star" style="color: #ffd500;"></i>';
         $area_sub.addEventListener('click', e=>{
             $btn.disabled = false;
             })

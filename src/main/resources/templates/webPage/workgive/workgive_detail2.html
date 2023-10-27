@@ -10,6 +10,7 @@
     <link rel="stylesheet" th:href="@{/css/cateBtn/cateBtn.css}">
 </th:block>
 <th:block layout:fragment="script">
+  <script src="https://kit.fontawesome.com/ba16334cfd.js" crossorigin="anonymous"></script>
   <script th:src="@{/js/calender.js}"></script>
 </th:block>
 
@@ -27,7 +28,7 @@
       </div>
       <div class="box1">
         <div class="location">
-          <div class="local_title"><h3>희망하는 지역을 선택해주세요.</h3></div>
+          <div class="local_title"><h3 class="h3">희망하는 지역을 선택해주세요.</h3></div>
           <!--  -->
           <div class="container__category" id="container__category">
             <div class="layer_wrap__category"></div>
@@ -64,7 +65,7 @@
         <table class="Calendar">
           <div class="checked">
             <div class="calender_title">
-              <h3>희망 날짜를 선택해주세요</h3></div>
+              <h3 class="h3">희망 날짜를 선택해주세요</h3></div>
             <div class="radios">
               <div class="tag">
                 <label>
@@ -110,7 +111,7 @@
       </div>
 
       <div class="box3">
-        <h3>하마에게 전달하고 싶은 내용을 적어주세요.</h3>
+        <h3 class="h3">하마에게 전달하고 싶은 내용을 적어주세요.</h3>
         <div class="box">
           <textarea class="chat-text-box" placeholder="하마가 꼭 참고할 내용을 적어주세요. (최대 100자)" spellcheck="false"></textarea>
         </div>

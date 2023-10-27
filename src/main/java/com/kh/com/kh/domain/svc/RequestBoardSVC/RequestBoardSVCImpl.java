@@ -15,7 +15,12 @@ public class RequestBoardSVCImpl implements RequestBoardSVC{
 
   private final RequestBoardDAO requestBoardDAO;
   @Override
-  public List<WorkGive> findRQBoard() {
-    return null;
+  public List<WorkGive> findRQBoardAll() {
+    return requestBoardDAO.findRQBoardAll();
+  }
+
+  @Override
+  public WorkGive findRQBoard(Long pid) {
+    return requestBoardDAO.findRQBoard(pid);
   }
 }

@@ -5,5 +5,7 @@ import com.kh.com.kh.domain.dao.entity.WorkGive;
 import java.util.List;
 
 public interface RequestBoardDAO {
-  List<WorkGive> findRQBoard();
+  List<WorkGive> findRQBoardAll();
+
+  WorkGive findRQBoard(Long pid);
 }

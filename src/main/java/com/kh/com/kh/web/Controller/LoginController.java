@@ -41,6 +41,7 @@ public class LoginController {
       @RequestParam(value = "redirectUrl", required = false, defaultValue = "/") String redirectUrl,
       @Valid
       @ModelAttribute
+      HttpSession session,
       LoginForm loginForm,
       BindingResult bindingResult,
       HttpServletRequest request
@@ -70,10 +71,12 @@ public class LoginController {
     }
 
     HttpSession httpSession = request.getSession(true);
+    Long memberId = (Long) member.getMember_id();
     SessionForm sessionForm = new SessionForm(
         member.getMember_id(), member.getEmail(), member.getNickname(),member.getGubun()
     );
     httpSession.setAttribute("sessionForm",sessionForm);
+    httpSession.setAttribute("s_memberid",member.getMember_id());
     mv.setViewName("redirect:"+redirectUrl);
     mv.addObject("loginForm",loginForm);
     return mv;

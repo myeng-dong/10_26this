@@ -38,5 +38,5 @@ insert into requestBoard (board_id,member_id,nickname,category,area,hope_date,ho
 insert into requestBoard (board_id,member_id,nickname,category,area,hope_date,hope_text)
     values(requestB_requestB_id_seq.nextval, 4, '관리자2','도우미/배달 도우미', '경상/창원시','2024-01-20','안녕하세요 테스트트');    
 
-select * from requestBoard;
+select board_id,member_id,nickname,category,area,hope_date,hope_text from requestBoard;
 commit;

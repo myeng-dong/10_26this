@@ -27,4 +27,11 @@ public class HomeController {
     mv.setViewName("webPage/indexs/index");
     return mv;
   }
+
+  @GetMapping("/cus_center")
+  public ModelAndView cusCenter(){
+    ModelAndView mv = new ModelAndView();
+    mv.setViewName("webPage/cus_center/cus_center");
+    return mv;
+  }
   }
