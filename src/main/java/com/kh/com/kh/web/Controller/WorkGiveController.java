@@ -86,6 +86,7 @@ public class WorkGiveController {
     Object useSession = session.getAttribute("sessionForm");
     SessionForm sessionForm = (SessionForm) useSession;
 
+
     GiveForm giveForm = new GiveForm();
     giveForm.setHope_date(fetchForm.getDate().replaceAll("[\\n\\s]",""));
     giveForm.setArea(fetchForm.getLocation());
@@ -96,8 +97,8 @@ public class WorkGiveController {
     log.info("GiveForm={}",giveForm);
     log.info("session={}",useSession);
 
-//    Long insert = workGiveSVC.giveInsert(giveForm);
-//    log.info("insert={}",insert);
+    Long insert = workGiveSVC.giveInsert(giveForm);
+    log.info("insert={}",insert);
 
     mv.setViewName("redirect:/");
     return mv;

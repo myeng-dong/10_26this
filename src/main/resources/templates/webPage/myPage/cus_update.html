@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/header}" xmlns="http://www.w3.org/1999/html">
+<!--only_footer, header-->
+
+<th:block layout:fragment="css">
+    <link rel="stylesheet" th:href="@{/css/mypage/cus_update.css}">
+    <link rel="stylesheet" th:href="@{/css/mypage/btn.css}">
+</th:block>
+
+
+<div layout:fragment="content">
+  <body>
+  <div class="upcontainer">
+    <div class="upheader">
+      <div class="main_title"><h1>회원정보수정</h1></div>
+    </div>
+    <div class="upmain">
+      <div class="content_top">
+        <div class="top_title">내 프로필</div>
+        <div class="first_top">
+          <div class="pic_nickname">
+            <div class="pic">
+              <img src="/iamge/반려/미용.jpg" alt="">
+            </div>
+            <div class="nick_id">
+              <div class="nickname" th:text="${session.sessionForm.nickname}">별명</div>
+              <div class="id_value" th:text="${session.sessionForm.email}">hama2team@hwaiting.com</div>
+            </div>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="phone_img">
+            <img src="/iamge/아이콘/phone.png" alt=""></div>
+          <div class="phone-num" th:text="${session.sessionForm.tel}">010-9999-9999</div>
+        </div>
+        <div class="phone">
+          <div class="phone_img">
+            <img src="/iamge/아이콘/letter.png" alt=""></div>
+          <div class="phone-num" th:text="${session.sessionForm.email}">hama2tema@legend.com</div>
+        </div>
+      </div>
+      <div class="content_bottom">
+        <div class="bottom_title">수정</div>
+        <div class="bottom_first">
+          <div class="update_pic">
+            <form action="" method="post" th:object="${updateCKForm}">
+              <button type="submit" class="button colorbutton update">사진 변경</button>
+            </form>
+            <form action="/update/delete" method="post">
+            <button type="submit" class="button colorbutton delete"/>삭제</button>
+            </form>
+          </div>
+          <div class="value update_nickname">
+            <div class="nickname_form_title">별명 :</div>
+            <div class="input nick_form">
+              <div class="nickname_form">
+                <input type="text" class="inner"></div>
+              <button class="button borderbutton bottom nick">수정</button>
+            </div>
+          </div>
+          <div class="value update_nickname">
+            <div class="nickname_form_title">전화번호 :</div>
+            <div class="input nick_form">
+              <div class="nickname_form">
+                <input type="text" class="inner"></div>
+              <button class="button borderbutton bottom phone">수정</button>
+            </div>
+          </div>
+
+          <div class="value update_nickname">
+            <div class="nickname_form_title">비밀번호 :</div>
+            <div class="input nick_form">
+              <div class="nickname_form">
+                <input type="password" class="inner"></div>
+            </div>
+          </div>
+          <div class="value update_nickname">
+            <div class="nickname_form_title">비밀번호 확인 :</div>
+            <div class="input nick_form">
+              <div class="nickname_form">
+                <input type="password" class="inner"></div>
+            </div>
+          </div>
+          <div class="pw_btn"><button class="button borderbutton bottom password">비밀번호수정</button></div>
+
+        </div>
+      </div>
+      <div class="content_finish">
+        <!-- <div class="update_finish"><button class="button borderbutton update">수정완료</button></div> -->
+        <div class="cus_delete">회원탈퇴</div>
+      </div>
+    </div>
+  </div>
+  </body>
+</div>
+</html>

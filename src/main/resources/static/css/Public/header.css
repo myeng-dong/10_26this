@@ -15,18 +15,18 @@
 }
 /* 헤더시작 */
 .header{
-
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
    display: grid;
    grid-area: header;
    grid-template-areas: ". header2 .";
    grid-template-columns: 1fr 1024px 1fr;
    background-color: #fff;
-   top: 0;
-   position: sticky;
    z-index: 1;
    border-bottom: 2px solid #f2f2f2;
-   margin-top: 20px;
-
+   height : 90px;
 }
 /* 헤더 요소들 (가운데) */
 .headers{
@@ -36,7 +36,7 @@
    grid-template-areas: "logo gnb . login";
    grid-template-columns: repeat(3,1fr);
    height:80px;
-
+   margin-top: 10px;
 }
 /* 로고 */
 .header .logo_loggo{

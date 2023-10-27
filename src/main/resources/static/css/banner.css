@@ -4,7 +4,7 @@
     grid-template-areas: ". banner .";
     grid-template-columns: 1fr 1024px 1fr;
     padding: 50px;
-    
+    margin-top: 50px;
 }
 .banner{
     grid-area: banner;

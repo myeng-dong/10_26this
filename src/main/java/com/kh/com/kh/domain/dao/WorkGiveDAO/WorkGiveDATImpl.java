@@ -21,7 +21,6 @@ public class WorkGiveDATImpl implements WorkGiveDAO{
     sql.append("insert into requestBoard (board_id,member_id,nickname,category,area,hope_date,hope_text) ");
     sql.append("values(requestB_requestB_id_seq.nextval, :member_id, :nickname, ");
     sql.append(":category, :area, :hope_date, :hope_text) ");
-
     SqlParameterSource param = new BeanPropertySqlParameterSource(giveForm);
     Long insert = (long)template.update(sql.toString(), param);
     return insert;

@@ -12,6 +12,7 @@ public class Member {
   private String nickname;
   private String hobby;
   private String gubun;
+  private String tel;
   private byte[] pic;
   private LocalDateTime cdate;
   private LocalDateTime udate;
