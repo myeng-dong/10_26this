@@ -8,4 +8,5 @@ public class UpdateForm {
   private String tel;
   private String passwd;
   private byte[] pic;
+  private Long member_id;
 }

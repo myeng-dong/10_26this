@@ -105,6 +105,10 @@ body{
         justify-content: end;
         padding: 15px;
     }
+    .update_pic{
+        display:flex;
+        justify-content:space-between;
+    }
     .content_bottom .bottom_first .update_pic,
     .content_bottom .bottom_first .update_email,
     .content_bottom .bottom_first .update_nickname,
@@ -162,3 +166,44 @@ body{
     .cus_delete{
         cursor: pointer;
     }
+    #frm2{
+        display: flex;
+        justify-content:end;
+        width:110px;
+    }
+    .nickname_form_title.pic{
+        margin-top:10px;
+        margin-left:14px;
+    }
+    .filebox{
+        display : flex;
+        width:600px;
+        justify-content:start;
+    }
+    .filebox .upload-name {
+                display: inline-block;
+                height: 40px;
+                padding: 0 10px;
+                vertical-align: middle;
+                border: 1px solid #dddddd;
+                width:280px;
+                color: #999999;
+            }
+    .filebox label {
+                display: inline-block;
+                padding: 10px 20px;
+                color: #fff;
+                vertical-align: middle;
+                background-color: #999999;
+                cursor: pointer;
+                height: 20px;
+                margin-left: 10px;
+            }
+    .filebox input[type="file"] {
+                position: absolute;
+                width: 0;
+                height: 0;
+                padding: 0;
+                overflow: hidden;
+                border: 0;
+            }

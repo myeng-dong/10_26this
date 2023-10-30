@@ -74,7 +74,7 @@ public class LoginController {
     Long memberId = (Long) member.getMember_id();
     SessionForm sessionForm = new SessionForm(
         member.getMember_id(), member.getEmail(), member.getNickname(),member.getGubun(),
-        member.getTel(),member.getPic()
+        member.getTel(),member.getPic(),member.getPasswd()
     );
     httpSession.setAttribute("sessionForm",sessionForm);
     httpSession.setAttribute("s_memberid",member.getMember_id());

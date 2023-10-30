@@ -44,37 +44,44 @@
       </div>
       <div class="content_bottom">
         <div class="bottom_title">수정</div>
+        <div class="nickname_form_title pic">사진 : </div>
         <div class="bottom_first">
           <div class="update_pic">
-            <form action="" method="post" th:object="${updateCKForm}">
-              <button type="submit" class="button colorbutton update">사진 변경</button>
+            <form method="post" th:object="${updateCKForm}">
+              <div class="filebox">
+
+              <input class="upload-name" value="첨부파일" placeholder="첨부파일" name="esti_file">
+              <label for="file">파일찾기</label>
+              <input type="file" id="file" name="pic">
+              <input type="submit" class="button colorbutton update" value="사진 변경">
+              </div>
             </form>
-            <form action="/update/delete" method="post">
-            <button type="submit" class="button colorbutton delete"/>삭제</button>
+            <form action="/update/delete" method="post" id="frm2">
+            <input type="submit" class="button colorbutton delete" value="사진 삭제">
             </form>
           </div>
           <div class="value update_nickname">
             <div class="nickname_form_title">별명 :</div>
-            <div class="input nick_form">
+            <form class="input nick_form" method="post" th:object="${updateCKForm}">
               <div class="nickname_form">
-                <input type="text" class="inner"></div>
-              <button class="button borderbutton bottom nick">수정</button>
-            </div>
+                <input type="text" class="inner" name="nickname"></div>
+              <input type="submit" class="button borderbutton bottom nick" value="별명 변경">
+            </form>
           </div>
           <div class="value update_nickname">
             <div class="nickname_form_title">전화번호 :</div>
-            <div class="input nick_form">
+            <form class="input nick_form" method="post" th:object="${updateForm}">
               <div class="nickname_form">
-                <input type="text" class="inner"></div>
-              <button class="button borderbutton bottom phone">수정</button>
-            </div>
+                <input type="text" class="inner" name="tel"></div>
+              <input type="submit" class="button borderbutton bottom phone" value="전화번호 변경">
+            </form>
           </div>
-
-          <div class="value update_nickname">
+          <form action="" method="post" th:object="${updateForm}">
+          <div class="value update_nickname" >
             <div class="nickname_form_title">비밀번호 :</div>
             <div class="input nick_form">
               <div class="nickname_form">
-                <input type="password" class="inner"></div>
+                <input type="password" class="inner" name="passwd"></div>
             </div>
           </div>
           <div class="value update_nickname">
@@ -84,8 +91,8 @@
                 <input type="password" class="inner"></div>
             </div>
           </div>
-          <div class="pw_btn"><button class="button borderbutton bottom password">비밀번호수정</button></div>
-
+          <div class="pw_btn"><input type="submit" class="button borderbutton bottom password" value="비밀번호 수정"></div>
+          </form>
         </div>
       </div>
       <div class="content_finish">
