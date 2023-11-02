@@ -4,12 +4,14 @@
     font-family: GowunBatang-Regular;
     /* outline: 1px solid red; */
 }
+
 .container_wg{
    display: grid;
    grid-template-areas: ". banner ."
                         ". main .";
    grid-template-columns: 1fr 1024px 1fr;
    margin-bottom: 100px;
+   margin-top: 100px;
 }
 .banner_wg{
     margin-top: 50px;

@@ -2,8 +2,7 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layouts/only_footer}">
-
+      layout:decorate="~{layouts/header}">
 <th:block layout:fragment="css">
   <link rel="stylesheet" th:href="@{/css/index/login.css}">
 </th:block>
@@ -21,13 +20,12 @@
 
       <!--로그인창 함께하마 타이틀-->
       <div class="form__row">
-        <img src="/img/logo.png" alt=""
-             width="300px" height="150px">
+        <img src="/img/logo.png" alt="">
       </div>
 
       <!--아이디 입력 박스-->
       <div class="form__row">
-        <i class="fa-solid fa-user fa-bounce"></i> <!--아이디 아이콘-->
+        <i class="fa-solid fa-user "></i> <!--아이디 아이콘-->
 
         <!--아이디 입력-->
         <input  type="email"
@@ -40,7 +38,7 @@
 
       <!--비밀번호 입력 박스-->
       <div class="form__row">
-        <i class="fa-solid fa-key fa-bounce"></i> <!--아이콘-->
+        <i class="fa-solid fa-key "></i> <!--아이콘-->
 
         <!--비밀번호 입력-->
         <input type="password"
