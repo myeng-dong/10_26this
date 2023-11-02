@@ -12,13 +12,14 @@
             --color-font2: #381B1B;
             /* 카카오톡 글자색 */
 
-            --color-bg1: #CCCCFF;
+            --color-bg1: #00B0FA;
             /* 배경색 */
-            --color-bg2: #F1D900;
-            /* 카카오톡 버튼 배경 */
+            --color-bg2: #0056b3;
+            /* 어두운 배경색 */
         }
 
         .main {
+            margin:100px 0 50px;
             padding: 40px;
             display: flex;
             flex-direction: column;
@@ -28,7 +29,9 @@
 
         .main .title {
             padding: 20px;
+            width:400px;
             text-align: center;
+            border-bottom:1px solid #00B0FA;
         }
 
         .main .forms {
@@ -36,8 +39,6 @@
         }
 
         .container__signup {
-            outline: 1px solid #CCCCFF;
-            border-radius: 5%;
             padding: 40px;
         }
 
@@ -48,7 +49,7 @@
 
         .txt {
             height: 20px;
-            width: 320px;
+            width: 400px;
             padding: 5px;
             margin-top: 5px;
             font-size: 15px;
@@ -98,11 +99,12 @@
         .main .sign_btn_submit
         {
             height: 50px;
-            width: 400px;
+            width: 410px;
             margin: 10px 0 10px 0;
             text-align: center;
             font-size: larger;
-            background-color: #CCCCFF;
+            background-color: #00B0FA;;
+            color: #fff;
             border: none;
             display: flex;
             justify-content: center;
@@ -111,7 +113,7 @@
             cursor: pointer;
         }
         .main .sign_btn_submit:hover{
-          background-color: #BCCCFF;
+          background-color: var(--color-bg2);
         }
         .checkbox_field{
           display: flex;

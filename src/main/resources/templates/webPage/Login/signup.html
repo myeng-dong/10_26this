@@ -2,16 +2,16 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layouts/only_footer}">
+      layout:decorate="~{layouts/header}">
 <th:block layout:fragment="css">
-  <link rel="stylesheet" th:href="@{/css/signup.css}">
+  <link rel="stylesheet" th:href="@{/css/index/signup.css}">
 </th:block>
 
 <div layout:fragment="content">
 <body>
 <div class="main">
   <div class="title">
-    <h2 class="signup_title"><img src="" th:src="@{/img/로고.png}" width="300px" height="150px"></h2>
+    <h2 class="signup_title">회 원 가 입</h2>
   </div>
   <div class="container__signup">
     <form action="" class="forms" method="post" th:object="${signupForm}">
