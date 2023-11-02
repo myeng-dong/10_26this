@@ -60,10 +60,9 @@
       <th:block th:if="${session.s_memberid != null}">
       <div class="login_signup">
         <div></div>
-        <div class="login">받은견적</div>
-        <div class="login">보낸요청</div>
-        <div class="login">채팅</div>
-        <div class="login2"style="cursor: pointer;">
+        <a class="login" th:href="@{/getEs}">견적함</a>
+        <a class="login" th:href="@{/postRq}">요청함</a>
+        <div class="login2" style="cursor: pointer;">
           <li>
             <a href="#"><i class="fa-solid fa-user"></i></i></a>
             <ul class="depth_1">

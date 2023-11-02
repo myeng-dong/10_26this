@@ -1,6 +1,7 @@
 package com.kh.com.kh.web.Controller;
 
 import com.kh.com.kh.domain.dao.entity.WorkGive;
+import com.kh.com.kh.domain.dao.entity.WorkGiveAll;
 import com.kh.com.kh.domain.svc.RequestBoardSVC.RequestBoardSVC;
 import com.kh.com.kh.web.form.memberForm.SessionForm;
 import jakarta.servlet.http.HttpServletRequest;
@@ -45,7 +46,7 @@ public class RequestController {
   // 요청게시판 정보전달
   @GetMapping("/all")
   @ResponseBody
-  public List<WorkGive> requests(
+  public List<WorkGiveAll> requests(
       HttpServletRequest request
   ){
     HttpSession session = request.getSession();
@@ -53,7 +54,7 @@ public class RequestController {
     SessionForm sessionForm = (SessionForm) useSession;
     Long member_id = sessionForm.getMember_id();
     log.info("all실행여부={}","잘됨");
-    List<WorkGive> rqBoard = requestBoardSVC.findRQBoardAll();
+    List<WorkGiveAll> rqBoard = requestBoardSVC.findRQBoardAll();
     for (int i = 0; i < rqBoard.size(); i++) {
       if (rqBoard.get(i).getMember_id().equals(sessionForm.getMember_id())){
         Long result = (long)0;

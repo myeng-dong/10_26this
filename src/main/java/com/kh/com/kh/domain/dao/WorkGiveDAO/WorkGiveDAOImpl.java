@@ -11,15 +11,15 @@ import org.springframework.stereotype.Repository;
 @Slf4j
 @Repository
 @RequiredArgsConstructor
-public class WorkGiveDATImpl implements WorkGiveDAO{
+public class WorkGiveDAOImpl implements WorkGiveDAO{
 
   private final NamedParameterJdbcTemplate template;
 
   @Override
   public Long giveInsert(GiveForm giveForm) {
     StringBuffer sql = new StringBuffer();
-    sql.append("insert into requestBoard (board_id,member_id,nickname,category,area,hope_date,hope_text) ");
-    sql.append("values(requestB_requestB_id_seq.nextval, :member_id, :nickname, ");
+    sql.append("insert into requestBoard (board_id,member_id,category,area,hope_date,hope_text) ");
+    sql.append("values(requestB_requestB_id_seq.nextval, :member_id, ");
     sql.append(":category, :area, :hope_date, :hope_text) ");
     SqlParameterSource param = new BeanPropertySqlParameterSource(giveForm);
     Long insert = (long)template.update(sql.toString(), param);

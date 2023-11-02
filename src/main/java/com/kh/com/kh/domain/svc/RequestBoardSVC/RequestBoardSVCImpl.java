@@ -2,6 +2,7 @@ package com.kh.com.kh.domain.svc.RequestBoardSVC;
 
 import com.kh.com.kh.domain.dao.RequestBoardDAO.RequestBoardDAO;
 import com.kh.com.kh.domain.dao.entity.WorkGive;
+import com.kh.com.kh.domain.dao.entity.WorkGiveAll;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ public class RequestBoardSVCImpl implements RequestBoardSVC{
 
   private final RequestBoardDAO requestBoardDAO;
   @Override
-  public List<WorkGive> findRQBoardAll() {
+  public List<WorkGiveAll> findRQBoardAll() {
     return requestBoardDAO.findRQBoardAll();
   }
 
