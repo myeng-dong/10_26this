@@ -1,38 +1,37 @@
---Å×ÀÌºí »èÁ¦
+--í…Œì´ë¸” ì‚­ì œ
 drop table estimate;
 
---½ÃÄö½º»èÁ¦
+--ì‹œí€€ìŠ¤ì‚­ì œ
 drop sequence estimate_estimate_id_seq;
 
 create table estimate (
     estimate_id      number(10), -- pk,
-    board_id           number(10), -- requestBoard Å×ÀÌºíÀÇ ¿Ü·¡Å°,
-    member_id        number(10), -- member Å×ÀÌºíÀÇ ¿Ü·¡Å°,       -- ¿Ã¸°¸É¹ö¾ÆÀÌµğ
-    work_member_id   number(10),     -- ÇÏ¸¶ÀÇ ¾ÆÀÌµğ
-    esti_gubun      varchar2(10) not null, --°ßÀû¼­ ÀÛ¼ºÀÇ ÃÑ ºñ¿ë°ú ½Ã°£ ´ç ±¸ºĞ
-    esti_price      varchar2(20) not null,   --°ßÀû¼­ ÀÛ¼ºÀÇ °¡°İ
+    board_id           number(10), -- requestBoard í…Œì´ë¸”ì˜ ì™¸ë˜í‚¤,
+    member_id        number(10), -- member í…Œì´ë¸”ì˜ ì™¸ë˜í‚¤,       -- ì˜¬ë¦°ë§´ë²„ì•„ì´ë””
+    work_member_id   number(10),     -- í•˜ë§ˆì˜ ì•„ì´ë””
+    esti_gubun      varchar2(10) not null, --ê²¬ì ì„œ ì‘ì„±ì˜ ì´ ë¹„ìš©ê³¼ ì‹œê°„ ë‹¹ êµ¬ë¶„
+    esti_price      varchar2(20) not null,   --ê²¬ì ì„œ ì‘ì„±ì˜ ê°€ê²©
     esti_text       varchar2(300),
-    esti_file      BLOB,         --°ßÀû¼­ ÀÛ¼ºÀÇ ÆÄÀÏ
-    cdate               timestamp default systimestamp,         --»ı¼ºÀÏ½Ã
-    udate               timestamp default systimestamp          --¼öÁ¤ÀÏ½Ã
- ); 
- 
---±âº»Å°»ı¼º
+    esti_file      BLOB,         --ê²¬ì ì„œ ì‘ì„±ì˜ íŒŒì¼
+    cdate               timestamp default systimestamp,         --ìƒì„±ì¼ì‹œ
+    udate               timestamp default systimestamp          --ìˆ˜ì •ì¼ì‹œ
+ );
+
+--ê¸°ë³¸í‚¤ìƒì„±
 alter table estimate add Constraint estimate_estimate_id_pk primary key (estimate_id);
 
---¿Ü·¡Å°»ı¼º
+--ì™¸ë˜í‚¤ìƒì„±
 alter table estimate add constraint estimate_board_id_fk foreign key(board_id) references requestBoard(board_id);
 alter table estimate add constraint estimate_member_id_fk foreign key(member_id) references member(member_id);
-alter table estimate add constraint estimate_member_id_fk foreign key(work_member_id) references member(work_member_id);
 
---½ÃÄö½º
+--ì‹œí€€ìŠ¤
 create sequence estimate_estimate_id_seq;
 
---»ùÇÃµ¥ÀÌÅÍ of estimate
+--ìƒ˜í”Œë°ì´í„° of estimate
 insert into estimate (estimate_id, board_id ,member_id, work_member_id, esti_gubun, esti_price, esti_text)
-    values(estimate_estimate_id_seq.nextval, 1, 1, 1,'ÃÑ ºñ¿ë', '3,000', 'ÀßÇØµå¸®°Ú½À´Ï´Ù!');
+    values(estimate_estimate_id_seq.nextval, 1, 2, 1,'ì´ ë¹„ìš©', '3,000', 'ì˜í•´ë“œë¦¬ê² ìŠµë‹ˆë‹¤!');
 insert into estimate (estimate_id, board_id ,member_id, work_member_id, esti_gubun, esti_price, esti_text)
-    values(estimate_estimate_id_seq.nextval, 2, 2, 2,'½Ã°£ ´ç', '9,000', '°ÆÁ¤¸¶¼¼¿ä!');
+    values(estimate_estimate_id_seq.nextval, 2, 1, 2,'ì‹œê°„ ë‹¹', '9,000', 'ê±±ì •ë§ˆì„¸ìš”!');
 
 select * from estimate;
 commit;

@@ -12,7 +12,7 @@ create table member (
     work_member_id   number(10),         --내부 관리 아이디
     email       varchar2(50),   --로긴 아이디
     passwd      varchar2(12),   --로긴 비밀번호
-    tel         varchar2(13),   --연락처 ex)010-1234-5678
+    tel         varchar2(20),   --연락처 ex)010-1234-5678
     nickname    varchar2(30),   --별칭
     hobby       varchar2(300),  --취미
     gubun       varchar2(11)   default '주마', --회원구분 (일반,우수,관리자..)
