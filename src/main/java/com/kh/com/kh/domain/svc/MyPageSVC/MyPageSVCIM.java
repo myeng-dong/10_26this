@@ -18,4 +18,9 @@ public class MyPageSVCIM implements MyPageSVC{
   public Long updateCnt(UpdateForm updateForm) {
     return myPageDAO.updateCnt(updateForm);
   }
+
+  @Override
+  public Long deletePic(Long member_id) {
+    return myPageDAO.deletePic(member_id);
+  }
 }

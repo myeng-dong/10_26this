@@ -12,6 +12,6 @@ public class SessionForm {
   private String nickname;
   private String gubun;
   private String tel;
-  private byte[] pic;
+  private Long pic;
   private String passwd;
 }

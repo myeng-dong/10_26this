@@ -23,7 +23,8 @@
         <div class="first_top">
           <div class="pic_nickname">
             <div class="pic">
-              <img src="/iamge/반려/미용.jpg" alt="">
+              <img th:if="${session.sessionForm.pic} != null" th:src="@{|/view/${session.sessionForm.pic}|}" >
+              <i class="fa-solid fa-user" th:unless="${session.sessionForm.pic}" ></i>
             </div>
             <div class="nick_id">
               <div class="nickname" th:text="${session.sessionForm.nickname}">별명</div>
@@ -47,18 +48,32 @@
         <div class="nickname_form_title pic">사진 : </div>
         <div class="bottom_first">
           <div class="update_pic">
-            <form method="post" th:object="${updateCKForm}">
+<!--      사진 폼 시작                                              -->
+            <form action="/update/pic/add" method="post" th:object="${fileForm}" th:if="${session.sessionForm.pic} == null" enctype="multipart/form-data">
               <div class="filebox">
 
-              <input class="upload-name" value="첨부파일" placeholder="첨부파일" name="esti_file">
-              <label for="file">파일찾기</label>
-              <input type="file" id="file" name="pic">
-              <input type="submit" class="button colorbutton update" value="사진 변경">
+                <label for="file">파일찾기</label>
+                <input type="file" id="file" name="" th:field="*{imageFiles}">
+                <input type="hidden" name="member_id" th:value="${session.sessionForm.member_id}">
+                <input type="submit" class="button colorbutton update" value="사진 등록">
               </div>
             </form>
-            <form action="/update/delete" method="post" id="frm2">
-            <input type="submit" class="button colorbutton delete" value="사진 삭제">
+
+<!--            <form action="/update/pic" method="post" th:object="${fileForm}" th:if="${session.sessionForm.pic}">-->
+<!--              <div class="filebox">-->
+<!--                <input class="upload-name" value="첨부파일" placeholder="첨부파일" name="esti_file">-->
+<!--                <label for="file2">파일찾기</label>-->
+<!--                <input type="file" id="file2" name="pic">-->
+<!--                <input type="hidden" th:value="${session.sessionForm.member_id}">-->
+<!--                <input type="submit" class="button colorbutton update" value="사진 변경">-->
+<!--              </div>-->
+<!--            </form>-->
+
+            <form action="/update/pic/delete" method="post" th:object="${fileForm}" id="frm2" th:if="${session.sessionForm.pic} != null">
+              <input type="hidden" name="member_id" th:value="${session.sessionForm.member_id}">
+              <input type="submit" class="button colorbutton delete" value="사진 삭제">
             </form>
+
           </div>
           <div class="value update_nickname">
             <div class="nickname_form_title">별명 :</div>
