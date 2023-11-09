@@ -7,4 +7,6 @@ import java.util.Optional;
 
 public interface RequestBoxDAO {
   List<RequestAllForm> findAllRq(Long member_id);
+
+  Long delRQ(Long requestBoard_id);
 }

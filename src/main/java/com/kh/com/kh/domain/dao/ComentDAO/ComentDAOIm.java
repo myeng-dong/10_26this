@@ -68,7 +68,7 @@ public class ComentDAOIm implements ComentDAO{
     StringBuffer sql = new StringBuffer();
     sql.append("Delete from coment where coment_id = :coment_id ");
     Map<String,Long> param = Map.of("coment_id", coment_id);
-//    template.update()
-    return null;
+    Long update = (long)template.update(sql.toString(), param);
+    return update;
   }
 }

@@ -25,4 +25,9 @@ public class EstimateBoxSVCIm implements EstimateBoxSVC{
   public List<EstimateAllForm> findAllGetEs(Long member_id) {
     return estimateBoxDAO.findAllGetEs(member_id);
   }
+
+  @Override
+  public Long estiDel(Long estimate_id) {
+    return estimateBoxDAO.estiDel(estimate_id);
+  }
 }

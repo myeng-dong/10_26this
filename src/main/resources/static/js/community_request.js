@@ -80,7 +80,7 @@ async function displayPosts(posts) {
       if(post.member_id == 0){
         alert("자신의 요청에 견적을 작성할 수 없습니다");
       }else{
-          window.location.href = `http://localhost:9080/createRQ/${post.board_id}`;
+          location.href = `/createRQ/${post.board_id}`;
       }
           }
         )

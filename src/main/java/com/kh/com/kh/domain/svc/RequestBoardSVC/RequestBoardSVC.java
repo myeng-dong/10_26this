@@ -9,4 +9,5 @@ public interface RequestBoardSVC {
   List<WorkGiveAll> findRQBoardAll();
 
   WorkGive findRQBoard(Long pid);
+
 }

@@ -70,6 +70,7 @@ public class ChatController {
     ModelAndView mv = new ModelAndView();
     log.info("deleid_id={}",eid);
     log.info("delcoment_id={}",comentListForm.getComent_id());
+    Long result = comentSVC.comnentDel(comentListForm.getComent_id());
     redirectAttributes.addAttribute("eid", eid);
     mv.setViewName("redirect:/chat/{eid}");
     return mv;

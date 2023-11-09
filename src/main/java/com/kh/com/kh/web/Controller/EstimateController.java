@@ -55,7 +55,7 @@ public class EstimateController {
 
     Long result = estimateSVC.estimateInsert(estimateForm);
     log.info("estimateForm={}",estimateForm);
-    mv.setViewName("redirect:/");
+    mv.setViewName("redirect:/postEs");
     return mv;
   }
 }

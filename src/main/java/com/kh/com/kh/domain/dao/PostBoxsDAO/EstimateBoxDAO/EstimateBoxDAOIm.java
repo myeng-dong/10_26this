@@ -20,7 +20,6 @@ public class EstimateBoxDAOIm implements EstimateBoxDAO{
 
   @Override
   public List<EstimateAllForm> findAllPostEs(Long member_id) {
-    log.info("member_id={}",member_id);
     StringBuffer sql = new StringBuffer();
     sql.append("select e1.estimate_id, e1.board_id , e1.member_id, e1.work_member_id, e1.esti_gubun, r1.category, r1.hope_date, ");
     sql.append("e1.esti_price, e1.esti_text, e1.esti_file, m1.nickname, r1.area,to_char(e1.cdate,'YY/MM/DD')\"cdate\" ");
@@ -28,6 +27,7 @@ public class EstimateBoxDAOIm implements EstimateBoxDAO{
     sql.append("where e1.member_id = m1.member_id ");
     sql.append("and e1.board_id = r1.board_id ");
     sql.append("and e1.work_member_id = :member_id ");
+    sql.append("order by e1.cdate");
     Map<String,Long> param = Map.of("member_id",member_id);
     List<EstimateAllForm> query = template.query(sql.toString(), param, BeanPropertyRowMapper.newInstance(EstimateAllForm.class));
 
@@ -45,10 +45,22 @@ public class EstimateBoxDAOIm implements EstimateBoxDAO{
     sql.append("where e1.work_member_id = m1.member_id ");
     sql.append("and e1.board_id = r1.board_id ");
     sql.append("and e1.member_id = :member_id ");
+    sql.append("order by e1.cdate");
     Map<String,Long> param = Map.of("member_id",member_id);
     List<EstimateAllForm> query = template.query(sql.toString(), param, BeanPropertyRowMapper.newInstance(EstimateAllForm.class));
 
     log.info("EstiGet={}",query);
     return query;
+  }
+
+  @Override
+  public Long estiDel(Long estimate_id) {
+    String sqlComent = ("delete from coment where estimate_id = :estimate_id");
+    String sqlEstimate = ("delete from estimate where estimate_id = :estimate_id");
+    Map<String,Long> param = Map.of("estimate_id",estimate_id);
+    int update1 = template.update(sqlComent, param);
+    Long update = (long)template.update(sqlEstimate, param);
+
+    return update;
   }
 }

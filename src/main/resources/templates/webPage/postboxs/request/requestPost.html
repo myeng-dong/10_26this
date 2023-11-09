@@ -50,16 +50,25 @@
               <div class="req_content4_2" id="content10" th:text="${allRq.hope_text}">빠르게 해주실분 구해요~</div>
             </div>
           </div>
-          <div class="reqBox_Icon"><div id="delBtn">
-            <form action="" method="delete" value="">
-              <input type="hidden" value="" id="boardId" name="board_id"/>
-              <i class="fa-solid fa-trash-can" id="delBtns"></i>
+          <div class="reqBox_Icon">
+            <div id="delBtn">
+            <form action="" method="post" th:object="${requestForm}">
+              <input type="hidden" id="boardId" name="board_Id" th:value="${allRq.board_Id}"/>
+              <input type="submit" value="삭제" class="btnSub">
             </form>
-          </div></div>
+          </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <script>
+    const $btnSub = document.querySelectorAll('.btnSub');
+    [...$btnSub].forEach(ele => {ele.addEventListener('click', e=>{
+    if(!confirm("해당 요청을 삭제하시겠습니까?")){e.preventDefault();}
+      })
+    })
+  </script>
   </body>
 </div>
 </html>
