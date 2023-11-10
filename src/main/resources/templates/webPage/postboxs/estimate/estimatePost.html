@@ -30,6 +30,7 @@
       </div>
         <div th:if="${#lists.isEmpty(allPostEs)}">아무것도 없쒀</div>
       <div class="estiBoxWrap" th:each="esti : ${allPostEs}">
+        <a href="" th:href="@{chat/{pid}(pid=${esti.estimate_id})}" >
         <div class="estiBox">
           <div class="estiBox_Title" th:text="${esti.category}"> 기타 > 서류작성 </div>
           <div class="estiBox_Content">
@@ -56,15 +57,13 @@
             </div>
           </div>
           <div class="estiBox_Icon">
-            <div id="delBtn">
-              <a href="" th:href="@{chat/{pid}(pid=${esti.estimate_id})}" ><i class="fa-solid fa-paper-plane"></i></a>
               <form action="" method="post" th:object="${estimateAllForm}">
                 <input type="hidden" id="boardId" name="estimate_id" th:value="${esti.estimate_id}"/>
                 <input type="submit" value="삭제" class="btnSub">
               </form>
-            </div>
           </div>
         </div>
+        </a>
       </div>
     </div>
   </div>

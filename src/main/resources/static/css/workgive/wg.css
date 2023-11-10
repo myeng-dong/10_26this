@@ -4,6 +4,20 @@
     font-family: GowunBatang-Regular;
     /* outline: 1px solid red; */
 }
+:root {
+    --color-font1: #003;
+    /* 글자색 */
+    --color-font2: #bbb;
+    /* 서브 글자색 */
+    --color-font3: #f0f0f0;
+    /* 밝은 회색 */
+
+    --color-bg1: #00B0FA;
+    /* 밝은 배경색 */
+    --color-bg2: #039;
+    /* 어두운 배경색 */
+}
+
 
 .container_wg{
    display: grid;
@@ -27,8 +41,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: end;
-    padding-right: 50px;
-    padding-bottom: 20px;
+    padding: 0 50px 50px 0;
     margin-bottom: 50px;
     font-size: 2rem;
     font-weight: bold;
@@ -88,8 +101,8 @@
     overflow: hidden;
 }
 .main_wg .item_box_bottom .item:hover{
-    border: .1px solid #00B0FA;
-    color: #00B0FA;
+    border: .1px solid var(--color-bg2);
+    color: var(--color-bg2);
     font-weight: bold;
 }
 

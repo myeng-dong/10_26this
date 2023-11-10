@@ -49,8 +49,8 @@
         }
         .main_top .info_top{
             display: flex;
-            justify-content: space-around;
-            width: 850px;
+            justify-content: space-between;
+            width: 700px;
             border-bottom: 2px solid #f2f2f2;
             margin-bottom: 5px;
             padding: 10px;

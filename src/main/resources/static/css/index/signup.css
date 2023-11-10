@@ -31,7 +31,7 @@
             padding: 20px;
             width:400px;
             text-align: center;
-            border-bottom:1px solid #00B0FA;
+            border-bottom:1px solid #039;
         }
 
         .main .forms {
@@ -103,7 +103,7 @@
             margin: 10px 0 10px 0;
             text-align: center;
             font-size: larger;
-            background-color: #00B0FA;;
+            background-color: #039;
             color: #fff;
             border: none;
             display: flex;

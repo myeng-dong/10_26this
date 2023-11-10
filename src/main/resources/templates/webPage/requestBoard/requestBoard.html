@@ -10,14 +10,19 @@
     <link rel="stylesheet" th:href="@{/css/request_board/btn.css}">
     <link rel="stylesheet" th:href="@{/css/request_board/maintop.css}">
 </th:block>
+<th:block layout:fragment="script">
+  <script src="https://kit.fontawesome.com/ba16334cfd.js" crossorigin="anonymous"></script>
+</th:block>
 
 
 <div layout:fragment="content">
   <body>
-  <div class ="top__title__postlist_ask_hama">
-    <div class ="title__postlist_ask_hama">
-      <h2>요청 게시판</h2>
-      <h4>도움이 필요한 '주마'님들에게 견적서를 보내보세요!</h4>
+  <div class ="reqBoard_container">
+    <div class ="reqBoard_title">
+      <div>
+        <h2>요청 게시판</h2>
+        <h4>도움이 필요한 '주마'님들에게 견적서를 보내보세요!</h4>
+      </div>
     </div>
   </div>
   <div class ="postlist_ask_hama">
@@ -39,7 +44,10 @@
               <div class="main_info">
                 <div class="pic">
                   <div class="profile">
-                    <img th:src="@{|/view/${rqboard.pic}|}" >
+                    <div th:if="${rqboard.pic == null}">
+                      <i class="fa-solid fa-user"></i>
+                    </div>
+                    <img th:src="@{|/view/${rqboard.pic}|}" th:if="${rqboard.pic != null}">
                   </div>
                 </div>
                 <div class="info">

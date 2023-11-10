@@ -96,7 +96,7 @@
 }
 /* 서비스 추천 이미지 흑백 효과 */
 .rcmImg{
-    filter: grayscale(90%);
+    filter: grayscale(90%) brightness(130%);
     transition: filter 0.2s, transform 0.3s;
     transform: scale(1);
         /* 초기 크기 */

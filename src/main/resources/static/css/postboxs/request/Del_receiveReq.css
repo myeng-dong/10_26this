@@ -1,28 +1,16 @@
 *{
     margin: 0px; padding: 0;
 }
-/* 컬러 */
-:root {
-    --color-font1: #003;
-    /* 글자색 */
-    --color-font2: #bbb;
-    /* 서브 글자색 */
-    --color-font3: #f0f0f0;
-    /* 밝은 회색 */
-
-    --color-bg1: #00B0FA;
-    /* 밝은 배경색 */
-    --color-bg2: #039;
-    /* 어두운 배경색 */
-}
+/* *{outline: 1px solid grey;} */
 
 /* 요청함 전체 */
 .req_container{
     display: grid;
-    grid-template-areas:
+    grid-template-areas: 
     "left main .";
     grid-template-columns: 1fr 1024px 1fr;
     margin-bottom: 100px;
+    background-color: gold;
 }
 
 /* 보낸요청 / 받은 요청 */
@@ -38,12 +26,12 @@
 
 /* 페이지 제목 : 요청함 */
 .req_section2.req_main .title {
-    height: 100px;
+    height: 150px;
     display: flex;
     justify-content: flex-end;
     align-items: end;
-    padding: 0 50px 50px;
-    margin: 100px 0 50px;
+    padding-right: 50px;
+    margin-bottom: 50px;
     font-size: 2rem;
     font-weight: bold;
     border-bottom: 1px solid #00B0FA;
@@ -58,12 +46,11 @@
     border: 1px solid #888;
     border-radius: 10px;
     width: 1020px;
-    margin-bottom:20px;
 }
 /* 보낸 요청 박스 : 제목 + 본문 + 아이콘 */
 .reqBox{
     display: grid;
-    grid-template-areas:
+    grid-template-areas: 
     "reqBox_Title reqBox_Title"
     "reqBox_Content reqBox_Icon";
     grid-template-columns: 4fr 1fr;
@@ -85,7 +72,7 @@
 .reqBox_Content{
     grid-area: reqBox_Content;
     display: grid;
-    grid-template-areas:
+    grid-template-areas: 
     "user pay"
     "sendDate hopeDate"
     "coment coment";
@@ -145,10 +132,10 @@
 
 /* reqBox에 hover 시 변경 */
 .reqBoxWrap:hover {
-    border: 1px solid var(--color-bg2);
+    border: 3px solid #00B0FA;
 }
 .reqBox:hover .reqBox_Title {
-    background-color: var(--color-bg2);
+    background-color: #00B0FA;
     color: white;
 }
 .reqBox:hover #content1,
@@ -156,19 +143,21 @@
 .reqBox:hover #content5,
 .reqBox:hover #content7,
 .reqBox:hover #content9 {
-    color: var(--color-bg2);
+    color: #0056b3;
 }
 .reqBox:hover #content2,
 .reqBox:hover #content4,
 .reqBox:hover #content6,
 .reqBox:hover #content8,
 .reqBox:hover #content10 {
-    color: var(--color-font1);
+    color: #000;
 }
+.reqBox:hover i.fa-paper-plane,
 .reqBox:hover i.fa-trash-can {
     color: #00B0FA;
 }
 /* 아이콘 요소 직접 hover 시 색상 변경 */
+.reqBox .fa-paper-plane:hover,
 .reqBox .fa-trash-can:hover {
     color: #0056b3 !important;
 }
@@ -198,14 +187,14 @@
 
 /* 보낸요청 */
 .req_section1.req_sideMenu .sendReq a {
-    font-weight: bold;
-    color: #0056b3;
     text-decoration: none;
+    color: #000;
 }
 /* 받은 요청 */
 .req_section1.req_sideMenu .receiveReq a{
-   text-decoration: none;
-   color: #000;
+    font-weight: bold;
+    color: #0056b3;
+    text-decoration: none;
 }
 /* 페이지 표시 아이콘 */
 .fa-location-arrow{
