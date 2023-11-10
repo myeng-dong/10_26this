@@ -78,7 +78,7 @@ private final FileSVC fileSVC;
 
     SessionForm sessionForm = new SessionForm(
         updateForm.getMember_id(), sessionInfo.getEmail(), updateForm.getNickname(),sessionInfo.getGubun(),
-        updateForm.getTel(),updateForm.getPic(),updateForm.getPasswd()
+        updateForm.getTel(),sessionInfo.getPic(),updateForm.getPasswd()
     );
     session.setAttribute("sessionForm",sessionForm);
     mv.addObject("updateCKForm",sessionForm);
@@ -115,7 +115,7 @@ private final FileSVC fileSVC;
     sessionForm.setPic(result);
     session.setAttribute("sessionForm",sessionForm);
     log.info("update/delete={}",result);
-    mv.setViewName("webPage/myPage/cus_update");
+    mv.setViewName("redirect:/update");
     return mv;
   }
 
@@ -126,7 +126,7 @@ private final FileSVC fileSVC;
     ModelAndView mv = new ModelAndView();
     log.info("updateCK={}",fileForm);
     log.info("update/delete={}","호출됨!");
-    mv.setViewName("webPage/myPage/cus_update");
+    mv.setViewName("redirect:/update");
     return mv;
   }
   @PostMapping("/pic/delete")
@@ -142,7 +142,7 @@ private final FileSVC fileSVC;
       session.setAttribute("sessionForm",sessionForm);
     log.info("updateCK={}",fileForm);
     log.info("update/delete={}","호출됨!");
-    mv.setViewName("webPage/myPage/cus_update");
+    mv.setViewName("redirect:/update");
     return mv;
   }
 }
