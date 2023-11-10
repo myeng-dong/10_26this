@@ -10,5 +10,5 @@ public class EstimateForm {
   private String esti_gubun;  // input
   private String esti_price;    // input
   private String esti_text;   // input
-  private byte[] esti_file;   // input
+  private Long esti_file;   // input
 }

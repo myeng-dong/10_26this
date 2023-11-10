@@ -11,5 +11,5 @@ public class ComentForm {
   private String hope_date;
   private String area;
   private String esti_cdate;
-  private byte[] pic;
+  private Long pic;
 }

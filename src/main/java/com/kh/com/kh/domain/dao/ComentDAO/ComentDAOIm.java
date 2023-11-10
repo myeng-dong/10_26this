@@ -25,7 +25,8 @@ public class ComentDAOIm implements ComentDAO{
   @Override
   public ComentForm comentInfo(Long estimate_id) {
     StringBuffer sql = new StringBuffer();
-    sql.append("select e1.work_member_id,m1.pic,m1.nickname,esti_gubun,esti_price ,esti_text,r1.hope_date,r1.area, to_char(e1.cdate,'YY/MM/DD')\"esti_cdate\" ");
+    sql.append("select e1.work_member_id,m1.pic,m1.nickname,esti_gubun,esti_price ,esti_text,r1.hope_date,r1.area, to_char(e1.cdate,'YY/MM/DD')\"esti_cdate\", ");
+    sql.append("pic ");
     sql.append("from estimate e1, requestBoard r1, member m1 ");
     sql.append("where e1.board_id = r1.board_id ");
     sql.append("and e1.work_member_id = m1.member_id ");

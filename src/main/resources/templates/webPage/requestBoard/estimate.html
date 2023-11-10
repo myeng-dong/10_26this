@@ -20,7 +20,9 @@
         </div>
         <div class="main_info">
           <div class="pic">
-            <div class="profile"><img src="/iamge/기타/서류.jpg"></div>
+            <div class="profile">
+              <img th:src="@{|/view/${workgive.pic}|}" >
+            </div>
           </div>
           <div class="info">
             <div class="hope">
@@ -43,7 +45,7 @@
         <div class="title">
           <div class="cost_title">예상 금액</div>
           <div class="text_title">상세 내용</div>
-          <div class="file_title">파일 첨부</div>
+<!--          <div class="file_title">파일 첨부</div>-->
         </div>
         <form class="insert" method="post" th:object="${estimateForm}">
 
@@ -60,11 +62,11 @@
           <div class="text_bot">
             <textarea class="chat-text-box" placeholder="주마한테 말하고픈 상세한 견적과 설명을 해주세요. (최대 100자)" spellcheck="false"></textarea>
           </div>
-          <div class="filebox">
-            <input class="upload-name" value="첨부파일" placeholder="첨부파일" name="esti_file">
-            <label for="file">파일찾기</label>
-            <input type="file" id="file">
-          </div>
+<!--          <div class="filebox">-->
+<!--            <input class="upload-name" value="첨부파일" placeholder="첨부파일" name="esti_file">-->
+<!--            <label for="file">파일찾기</label>-->
+<!--            <input type="file" id="file">-->
+<!--          </div>-->
           <div>
             <input type="hidden" id="member_id" name="member_id">
             <input type="hidden" id="textarea" name="esti_text">

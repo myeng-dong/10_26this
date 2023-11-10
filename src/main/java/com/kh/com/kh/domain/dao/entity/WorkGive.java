@@ -12,4 +12,5 @@ public class WorkGive {
   private String hope_date;
   private String hope_text;
   private Long work_id;
+  private Long pic;
 }

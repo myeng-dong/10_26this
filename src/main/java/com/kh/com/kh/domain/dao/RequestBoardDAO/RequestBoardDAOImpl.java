@@ -37,10 +37,14 @@ public class RequestBoardDAOImpl implements RequestBoardDAO{
   @Override
   public WorkGive findRQBoard(Long pid) {
     // 단건조회
-    String sql = ("select board_id,member_id,category,area,hope_date,hope_text from requestBoard where board_id = :board_id");
+    StringBuffer sql = new StringBuffer();
+    sql.append("select board_id,r1.member_id,category,area,hope_date,hope_text,pic ");
+    sql.append("from requestBoard r1, member m1 ");
+    sql.append("where board_id = :board_id ");
+    sql.append("and r1.member_id = m1.member_id ");
     Map<String, Long> param = Map.of("board_id",pid);
     KeyHolder keyHolder = new GeneratedKeyHolder();
-    WorkGive workGive = template.queryForObject(sql, param, BeanPropertyRowMapper.newInstance(WorkGive.class));
+    WorkGive workGive = template.queryForObject(sql.toString(), param, BeanPropertyRowMapper.newInstance(WorkGive.class));
     Long memberId = workGive.getMember_id();
     // 해당건 닉네임 조회
     String sql2 =

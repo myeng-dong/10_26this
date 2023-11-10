@@ -28,7 +28,7 @@
         <div class="read_txt">
           <div class="content_profile">
             <div class="profile_1 writerPhoto" >
-              <span>이미지자리</span>
+              <img th:src="@{|/view/${estiForm.pic}|}" >
             </div>
             <div class="profile_2 writerInfo">
               <div class="writerNick" th:text="${estiForm.nickname}">${profile[i].닉네임}</div>
