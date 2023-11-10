@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title</title>
+</head>
+<body>
+<!--변수지정-->
+<span th:text="${findEmail}"></span>
+<form action="" method="post" th:object="${findPasswdForm}">
+  <input type="text" name="tel">
+  <input type="submit">
+<div>
+  <div class="field-error" th:if="${#fields.hasErrors('global')}" th:errors="*{global}">
+  </div>
+</div>
+</form>
+</body>
+</html>
