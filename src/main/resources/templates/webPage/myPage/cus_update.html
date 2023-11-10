@@ -9,7 +9,9 @@
     <link rel="stylesheet" th:href="@{/css/mypage/cus_update.css}">
     <link rel="stylesheet" th:href="@{/css/mypage/btn.css}">
 </th:block>
-
+<th:block layout:fragment="script">
+  <script src="https://kit.fontawesome.com/ba16334cfd.js" crossorigin="anonymous"></script>
+</th:block>
 
 <div layout:fragment="content">
   <body>
@@ -24,7 +26,7 @@
           <div class="pic_nickname">
             <div class="pic">
               <img th:if="${session.sessionForm.pic} != null" th:src="@{|/view/${session.sessionForm.pic}|}" >
-              <i class="fa-solid fa-user" th:unless="${session.sessionForm.pic}" ></i>
+              <i class="fa-solid fa-user" style="font-size: 50px;margin-bottom:10px;"  th:unless="${session.sessionForm.pic}" ></i>
             </div>
             <div class="nick_id">
               <div class="nickname" th:text="${session.sessionForm.nickname}">별명</div>

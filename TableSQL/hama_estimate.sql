@@ -6,23 +6,22 @@ drop sequence estimate_estimate_id_seq;
 
 create table estimate (
     estimate_id      number(10), -- pk,
-    board_id           number(10), -- requestBoard 테이블의 외래키,
+    board_id         number(10), -- requestBoard 테이블의 외래키,
     member_id        number(10), -- member 테이블의 외래키,       -- 올린맴버아이디
     work_member_id   number(10),     -- 하마의 아이디
-    esti_gubun      varchar2(10) not null, --견적서 작성의 총 비용과 시간 당 구분
-    esti_price      varchar2(20) not null,   --견적서 작성의 가격
-    esti_text       varchar2(300),
-    esti_file      BLOB,         --견적서 작성의 파일
+    esti_gubun       varchar2(10) not null, --견적서 작성의 총 비용과 시간 당 구분
+    esti_price       varchar2(20) not null,   --견적서 작성의 가격
+    esti_text        varchar2(300),
+    esti_file        number(10),         --견적서 작성의 파일
     cdate               timestamp default systimestamp,         --생성일시
     udate               timestamp default systimestamp          --수정일시
- );
-
+ ); 
+ 
 --기본키생성
 alter table estimate add Constraint estimate_estimate_id_pk primary key (estimate_id);
 
 --외래키생성
 alter table estimate add constraint estimate_board_id_fk foreign key(board_id) references requestBoard(board_id);
-alter table estimate add constraint estimate_member_id_fk foreign key(member_id) references member(member_id);
 
 --시퀀스
 create sequence estimate_estimate_id_seq;
