@@ -63,8 +63,12 @@
         <a class="login" th:href="@{/getEs}">견적함</a>
         <a class="login" th:href="@{/postRq}">요청함</a>
         <div class="login2" style="cursor: pointer;">
-          <li>
-            <a href="#"><i class="fa-solid fa-user"></i></i></a>
+          <li class="mypage">
+            <a href="#" class="mypagea">
+              <img src="" class="mypageImg" th:src="@{|/view/${session.sessionForm.pic}|}" th:if="${session.sessionForm.pic}">
+              <i class="fa-solid fa-user" th:unless="${session.sessionForm.pic}" ></i>
+
+            </a>
             <ul class="depth_1">
               <li><p>회원관리</p></li>
               <li><a href="" th:href="@{/update}">회원정보수정</a></li>

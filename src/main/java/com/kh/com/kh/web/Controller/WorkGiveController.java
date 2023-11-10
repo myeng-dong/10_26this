@@ -100,7 +100,7 @@ public class WorkGiveController {
     Long insert = workGiveSVC.giveInsert(giveForm);
     log.info("insert={}",insert);
 
-    mv.setViewName("redirect:/");
+    mv.setViewName("redirect:/postRq");
     return mv;
   }
 

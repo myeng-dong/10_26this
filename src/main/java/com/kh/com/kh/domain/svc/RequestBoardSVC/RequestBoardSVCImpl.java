@@ -24,4 +24,6 @@ public class RequestBoardSVCImpl implements RequestBoardSVC{
   public WorkGive findRQBoard(Long pid) {
     return requestBoardDAO.findRQBoard(pid);
   }
+
+
 }

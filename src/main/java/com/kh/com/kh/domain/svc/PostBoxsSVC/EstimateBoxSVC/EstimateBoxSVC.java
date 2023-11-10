@@ -9,4 +9,6 @@ public interface EstimateBoxSVC {
   List<EstimateAllForm> findAllPostEs(Long member_id);
 
   List<EstimateAllForm> findAllGetEs(Long member_id);
+
+  Long estiDel (Long estimate_id);
 }

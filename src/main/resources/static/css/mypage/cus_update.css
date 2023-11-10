@@ -61,12 +61,22 @@ body{
         display: flex;
         padding: 10px;
     }
+    .content_top .pic{
+        position:relative;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+    .content_top .pic img{
+        position:absolute;
+    }
     .content_top .pic,
     .content_top .pic img {
         border-radius: 50%;
         width: 80px;
         height: 80px;
         margin-right: 20px;
+
     }
     .content_top .pic_nickname .nick_id{
         display: flex;
@@ -207,3 +217,10 @@ body{
                 overflow: hidden;
                 border: 0;
             }
+
+    i.fa-solid.fa-user{
+       font-size: 30px;
+       position : relative;
+       color: gray;
+
+    }

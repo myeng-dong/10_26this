@@ -18,4 +18,9 @@ public class RequestBoxSVCIm implements RequestBoxSVC{
   public List<RequestAllForm> findAllRq(Long member_id) {
     return requestBoxDAO.findAllRq(member_id);
   }
+
+  @Override
+  public Long delRQ(Long requestBoard_id) {
+    return requestBoxDAO.delRQ(requestBoard_id);
+  }
 }

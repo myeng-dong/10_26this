@@ -39,6 +39,8 @@ public class EstimateController {
     return mv;
   }
 
+
+
   @PostMapping("/{pid}")
   public ModelAndView estimate(
     @PathVariable("pid") Long pid,
@@ -55,7 +57,7 @@ public class EstimateController {
 
     Long result = estimateSVC.estimateInsert(estimateForm);
     log.info("estimateForm={}",estimateForm);
-    mv.setViewName("redirect:/");
+    mv.setViewName("redirect:/postEs");
     return mv;
   }
 }

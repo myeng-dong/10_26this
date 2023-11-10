@@ -16,7 +16,7 @@ create table member (
     nickname    varchar2(30),   --별칭
     hobby       varchar2(300),  --취미
     gubun       varchar2(11)   default '주마', --회원구분 (일반,우수,관리자..)
-    pic         blob,            --사진
+    pic         number(10),            --사진
     cdate       timestamp default systimestamp,         --생성일시
     udate       timestamp default systimestamp          --수정일시
 );

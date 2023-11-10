@@ -38,7 +38,7 @@ public class LoginController {
   // 1. RequestParam 으로 Post 매개변수를 redirectURL에 담음
   @PostMapping("login")
   public ModelAndView loginForm(
-      @RequestParam(value = "redirectUrl", required = false, defaultValue = "/") String redirectUrl,
+//      @RequestParam(value = "redirectUrl", required = false, defaultValue = "/") String redirectUrl,
       @Valid
       @ModelAttribute
       HttpSession session,
@@ -78,7 +78,7 @@ public class LoginController {
     );
     httpSession.setAttribute("sessionForm",sessionForm);
     httpSession.setAttribute("s_memberid",member.getMember_id());
-    mv.setViewName("redirect:"+redirectUrl);
+    mv.setViewName("redirect:/");
     mv.addObject("loginForm",loginForm);
     return mv;
   }

@@ -14,7 +14,8 @@ let arr = ['청소/이사','레슨','디자인/개발','도우미','펫','기타
                   // console.log(arr[j],$bigCategory[j].children[i].children[1].textContent);
                   result = (arr[j]+ "  " +$bigCategory[j].children[i].children[1].textContent);
                   localStorage.setItem('category',result);
-                  window.location.assign('http://localhost:9080/give/detail');
+                  //window.location.assign('http://localhost:7080/give/detail');
+                  location.href = '/give/detail';
                   i = 10;
                   break;
                   }

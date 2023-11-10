@@ -11,5 +11,5 @@ public class WorkGiveAll {
   private String area;
   private String hope_date;
   private String hope_text;
-
+  private Long pic;
 }

@@ -36,6 +36,15 @@ public class RequestController {
     Long member_id = sessionForm.getMember_id();
 
     HttpSession loginCheck = request.getSession(false);
+    log.info("all실행여부={}","잘됨");
+    List<WorkGiveAll> rqBoard = requestBoardSVC.findRQBoardAll();
+    for (int i = 0; i < rqBoard.size(); i++) {
+      if (rqBoard.get(i).getMember_id().equals(sessionForm.getMember_id())){
+        rqBoard.remove(i);
+      };
+    }
+    log.info("rqBoard={}",rqBoard);
+    mv.addObject("rqboard",rqBoard);
     mv.addObject("loginCheck",loginCheck);
     mv.addObject("member_id",member_id);
 
@@ -44,28 +53,28 @@ public class RequestController {
   }
 
   // 요청게시판 정보전달
-  @GetMapping("/all")
-  @ResponseBody
-  public List<WorkGiveAll> requests(
-      HttpServletRequest request
-  ){
-    HttpSession session = request.getSession();
-    Object useSession = session.getAttribute("sessionForm");
-    SessionForm sessionForm = (SessionForm) useSession;
-    Long member_id = sessionForm.getMember_id();
-    log.info("all실행여부={}","잘됨");
-    List<WorkGiveAll> rqBoard = requestBoardSVC.findRQBoardAll();
-    for (int i = 0; i < rqBoard.size(); i++) {
-      if (rqBoard.get(i).getMember_id().equals(sessionForm.getMember_id())){
-        Long result = (long)0;
-        rqBoard.get(i).setMember_id(result);
-        log.info("result={}",rqBoard.get(i).getMember_id());
-      };
-
-    }
-    log.info("rqBoard={}",rqBoard);
-    return rqBoard;
-  }
+//  @GetMapping("/all")
+//  @ResponseBody
+//  public List<WorkGiveAll> requests(
+//      HttpServletRequest request
+//  ){
+//    HttpSession session = request.getSession();
+//    Object useSession = session.getAttribute("sessionForm");
+//    SessionForm sessionForm = (SessionForm) useSession;
+//    Long member_id = sessionForm.getMember_id();
+//    log.info("all실행여부={}","잘됨");
+//    List<WorkGiveAll> rqBoard = requestBoardSVC.findRQBoardAll();
+//    for (int i = 0; i < rqBoard.size(); i++) {
+//      if (rqBoard.get(i).getMember_id().equals(sessionForm.getMember_id())){
+//        Long result = (long)0;
+//        rqBoard.get(i).setMember_id(result);
+//        log.info("result={}",rqBoard.get(i).getMember_id());
+//      };
+//
+//    }
+//    log.info("rqBoard={}",rqBoard);
+//    return rqBoard;
+//  }
 
 //  @PostMapping("/{pid}")
 //  @ResponseBody

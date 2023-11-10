@@ -23,20 +23,13 @@ public class RequestBoardDAOImpl implements RequestBoardDAO{
 
   @Override
   public List<WorkGiveAll> findRQBoardAll() {
-    String sql =
-        ("select board_id,member_id,category,area,hope_date,hope_text from requestBoard ");
-    String sql2 =
-        ("select r1.member_id,nickname from requestBoard r1, member m1 where r1.member_id = m1.member_id ");
+    StringBuffer sql = new StringBuffer();
+    sql.append("select board_id,r1.member_id,category,area,hope_date,hope_text ,nickname,pic ");
+    sql.append("from requestBoard r1 , member m1 ");
+    sql.append("where r1.member_id = m1.member_id ");
+    sql.append("order by r1.cdate ");
 
-    List<WorkGiveAll> query = template.query(sql, BeanPropertyRowMapper.newInstance(WorkGiveAll.class));
-    List<WorkGiveNick> queryNick = template.query(sql2, BeanPropertyRowMapper.newInstance(WorkGiveNick.class));
-
-    for (int i = 0; i < query.size(); i++) {
-      for (int j = 0; j < queryNick.size(); j++) {
-      if(query.get(i).getMember_id().equals(queryNick.get(j).getMember_id())){
-        query.get(i).setNickname(queryNick.get(j).getNickname());
-        }}}
-
+    List<WorkGiveAll> query = template.query(sql.toString(), BeanPropertyRowMapper.newInstance(WorkGiveAll.class));
     log.info("DAOquery={}",query);
     return query;
   }

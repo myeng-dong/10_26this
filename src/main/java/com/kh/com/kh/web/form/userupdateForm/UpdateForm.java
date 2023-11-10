@@ -7,6 +7,6 @@ public class UpdateForm {
   private String nickname;
   private String tel;
   private String passwd;
-  private byte[] pic;
+  private Long pic;
   private Long member_id;
 }

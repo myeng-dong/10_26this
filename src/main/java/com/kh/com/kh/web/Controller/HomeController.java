@@ -1,5 +1,6 @@
 package com.kh.com.kh.web.Controller;
 
+import com.kh.com.kh.web.form.memberForm.SessionForm;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
@@ -16,14 +17,16 @@ public class HomeController {
 
   @GetMapping("/")
   public ModelAndView webAddForm(
-      HttpServletRequest request
+      HttpServletRequest request,
+      HttpSession session
   ){
     ModelAndView mv = new ModelAndView();
     String view = null;
     HttpSession loginCheck = request.getSession(false);
-
+//    SessionForm sessionForm = (SessionForm) session.getAttribute("sessionForm");
     log.info("session ={}",loginCheck);
     mv.addObject("loginCheck",loginCheck);
+//    mv.addObject("pic",sessionForm.getPic());
     mv.setViewName("webPage/indexs/index");
     return mv;
   }

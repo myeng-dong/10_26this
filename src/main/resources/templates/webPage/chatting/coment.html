@@ -67,7 +67,7 @@
                 <span class="userCmtTime" th:text="${coment.coment_date}">${comment.만들어진날짜}</span>
                 <form th:action="@{/chat/delete/{eid}(eid=${eid})}" method="post" th:object="${comentListForm}">
                 <input type="hidden" th:value="${coment.coment_id}" name="coment_id">
-                <button type="submit" class="delete-comment-button" data-index="${index}">삭제</button>
+                <button type="submit" id="btnSub" class="delete-comment-button" data-index="${index}" th:if="${session.sessionForm.nickname} == ${coment.nickname}">삭제</button>
 <!--                  세션닉이랑 댓글닉이 같으면 활성화-->
                 </form>
 
@@ -87,6 +87,13 @@
       </div>
     </div>
   </div>
+  <script>
+    const $btnSub = document.querySelectorAll('#btnSub');
+    [...$btnSub].forEach(ele => {ele.addEventListener('click', e=>{
+    if(!confirm("해당 요청을 삭제하시겠습니까?")){e.preventDefault();}
+      })
+    })
+  </script>
   </body>
 </div>
 </html>
