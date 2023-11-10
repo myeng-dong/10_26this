@@ -29,5 +29,23 @@ public class MemberSVCImpl implements MemberSVC {
     return memberDAO.nickExist(nickname);
   }
 
+  //아이디찾기
+  @Override
+  public Optional<String> findEmailByTel(String tel) {
+    return memberDAO.findEmailByTel(tel);
+  }
+
+  //비밀번호 존재유무
+  @Override
+  public boolean existUser(String email, String tel) {
+    return memberDAO.existUser(email, tel);
+  }
+
+  //비밀번호 변경
+  @Override
+  public int changePasswd(String email, String passwd) {
+    return memberDAO.changePasswd(email,passwd);
+  }
+
 
 }

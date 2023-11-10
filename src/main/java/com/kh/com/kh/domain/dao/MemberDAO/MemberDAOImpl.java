@@ -69,4 +69,47 @@ public class MemberDAOImpl implements MemberDAO {
 
     return cnt == 1 ? true : false ;
   }
+
+  //아이디찾기
+  @Override
+  public Optional<String> findEmailByTel(String tel) {
+    String sql = "select email from member where tel = :tel";
+
+    Map<String,String> param = Map.of("tel",tel);
+
+    try {
+      String email = template.queryForObject(sql, param, String.class);
+      return Optional.of(email);
+    } catch (EmptyResultDataAccessException e) {
+      return Optional.empty();
+    }
+  }
+
+  //비밀번호 유무확인
+  @Override
+  public boolean existUser(String email, String tel) {
+    StringBuffer sql = new StringBuffer();
+    sql.append("select count(*) ");
+    sql.append("  from member ");
+    sql.append(" where email = :email ");
+    sql.append("   and tel = :tel ");
+
+    Map<String, String> param = Map.of("email", email, "tel", tel);
+    Integer cnt = template.queryForObject(sql.toString(), param, Integer.class);
+
+    return cnt == 1 ? true : false;
+  }
+
+  //비밀번호 변경
+  @Override
+  public int changePasswd(String email, String passwd) {
+    StringBuffer sql = new StringBuffer();
+    sql.append("update member ");
+    sql.append("   set passwd = :passwd ");
+    sql.append(" where email  = :email ");
+
+    Map<String, String> param = Map.of("passwd", passwd, "email", email);
+    int updatedRow = template.update(sql.toString(), param);
+    return updatedRow;
+  }
 }
