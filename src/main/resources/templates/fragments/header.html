@@ -33,7 +33,7 @@
           </li>
           <!-- 커뮤니티 -->
           <li>
-            <a href="#" th:href="@{/mapApi}">편의시설</a>
+            <a href="#" th:href="@{/community/question}">커뮤니티</a>
           </li>
           <!-- 하마찾기 -->
           <li>
@@ -67,14 +67,11 @@
             <a href="#" class="mypagea">
               <img src="" class="mypageImg" th:src="@{|/view/${session.sessionForm.pic}|}" th:if="${session.sessionForm.pic}">
               <i class="fa-solid fa-user" th:unless="${session.sessionForm.pic}" ></i>
-
             </a>
             <ul class="depth_1">
               <li><p>회원관리</p></li>
               <li><a href="" th:href="@{/update}">회원정보수정</a></li>
               <li><a href="" th:href="@{/logout}">로그아웃</a></li>
-              <li><p>하마전용</p></li>
-              <li><a href="#">하마찾기등록</a></li>
             </ul>
           </li></div>
 

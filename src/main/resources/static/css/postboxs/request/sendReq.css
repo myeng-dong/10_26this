@@ -165,14 +165,45 @@
 .reqBox:hover #content10 {
     color: var(--color-font1);
 }
-.reqBox:hover i.fa-trash-can {
-    color: #00B0FA;
+/*   삭제 버튼   */
+.reqBox:hover input{
+    border: 1px solid var(--color-bg2);
+    color: var(--color-bg2);
 }
-/* 아이콘 요소 직접 hover 시 색상 변경 */
-.reqBox .fa-trash-can:hover {
-    color: #0056b3 !important;
+.reqBox_Icon{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    color:grey;
 }
-
+.reqBox_Icon input{
+    border: 1px solid grey;
+    transition: all 0.3s ease;
+}
+.reqBox_Icon input:hover{
+    background-color: var(--color-bg2);
+    border:none;
+    color:#fff;
+    width:70px;
+    height:70px;
+}
+.btnSub{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background-color: var(--color--bg2);
+    color: var(--color--bg2);
+    cursor: pointer;
+    border: 1px solid grey;
+        transition: all 0.3s ease;
+}
+.btnSub:hover{
+    background-color: var(--color-bg2);
+        border:none;
+        color:#fff;
+        width:70px;
+        height:70px;
+}
 
 /* 좌측 사이드 메뉴 */
 .req_section1.req_sideMenu{

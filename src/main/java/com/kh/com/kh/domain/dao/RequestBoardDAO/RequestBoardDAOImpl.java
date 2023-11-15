@@ -27,7 +27,7 @@ public class RequestBoardDAOImpl implements RequestBoardDAO{
     sql.append("select board_id,r1.member_id,category,area,hope_date,hope_text ,nickname,pic ");
     sql.append("from requestBoard r1 , member m1 ");
     sql.append("where r1.member_id = m1.member_id ");
-    sql.append("order by r1.cdate ");
+    sql.append("order by r1.cdate desc");
 
     List<WorkGiveAll> query = template.query(sql.toString(), BeanPropertyRowMapper.newInstance(WorkGiveAll.class));
     log.info("DAOquery={}",query);

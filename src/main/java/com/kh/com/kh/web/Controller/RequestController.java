@@ -41,7 +41,7 @@ public class RequestController {
     for (int i = 0; i < rqBoard.size(); i++) {
       if (rqBoard.get(i).getMember_id().equals(sessionForm.getMember_id())){
         rqBoard.remove(i);
-      };
+      }
     }
     log.info("rqBoard={}",rqBoard);
     mv.addObject("rqboard",rqBoard);

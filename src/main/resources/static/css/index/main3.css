@@ -135,12 +135,19 @@
     /*글 제목 폰트*/
     .item__post__desc__title{
         font-weight: 900;
-        color: #00B0FA;
+        font-size:15px;
+        color: #003399;
         margin-bottom: 10px;
         margin-top: -10px;
+        padding-left:10px;
     }
 
     .item__post__desc__content{
-        color: #666;
+        color: grey;
         font-weight: lighter;
     }
+ .commu_text_{
+     color: grey;
+     font-weight: lighter;
+     padding-left:15px;
+ }

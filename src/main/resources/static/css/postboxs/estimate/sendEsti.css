@@ -189,6 +189,18 @@
     height:70px;
 }
 
+.btnSub{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background-color: var(--color--bg2);
+    color: var(--color--bg2);
+    cursor: pointer;
+}
+.btnSub:hover{
+    background-color:gold;
+}
+
 /* 좌측 사이드 메뉴 */
 .esti_section1.esti_sideMenu{
     display: flex;

@@ -146,62 +146,61 @@
 
       <!--게시글 박스-->
       <div class="community__post">
-
-        <div class="item__main3">
-          <div class="item__cate">카테고리</div>
-
-          <!--사진+제목+내용 박스-->
-          <div class="item__post">
-            <img class="pic" src="https://picsum.photos/50" alt="" />
-
-            <ul class="desc">
-              <li class="item__post__desc__title">제목</li>
-              <li>내용</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="item__main3">
-          <div class="item__cate">카테고리</div>
+        <div class="item__main3" th:each="comu : ${comu}">
+          <div class="item__cate">궁금해요</div>
 
           <!--사진+제목+내용 박스-->
           <div class="item__post">
             <img class="pic" src="https://picsum.photos/50" alt="" />
 
             <ul class="desc">
-              <li class="item__post__desc__title">제목</li>
-              <li>내용</li>
+              <li class="item__post__desc__title" th:text="${comu.title}">이 강아지모델 이름 혹시 알 수 있을까요?</li>
+              <li class="commu_text_" th:utext="${comu.content}">인스타 계정 아시는 분 댓글 부탁드려요~!</li>
             </ul>
           </div>
         </div>
+<!--&#45;&#45;&#45;&#45;-->
+<!--        <div class="item__main3">-->
+<!--          <div class="item__cate">궁금해요</div>-->
+
+<!--          &lt;!&ndash;사진+제목+내용 박스&ndash;&gt;-->
+<!--          <div class="item__post">-->
+<!--            <img class="pic" src="https://picsum.photos/50" alt="" />-->
+
+<!--            <ul class="desc">-->
+<!--              <li class="item__post__desc__title">아파트 입주 청소 견적 도와주세요</li>-->
+<!--              <li class="commu_text_">27평 아파트 입주를 하는데 청소 도우미를 부르면 비용이 어느 정도 될까요?</li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </div>-->
 
 
-        <div class="item__main3">
-          <div class="item__cate">카테고리</div>
+<!--        <div class="item__main3">-->
+<!--          <div class="item__cate">궁금해요</div>-->
 
-          <!--사진+제목+내용 박스-->
-          <div class="item__post">
-            <img class="pic" src="https://picsum.photos/50" alt="" />
-            <ul class="desc">
-              <li class="item__post__desc__title">제목</li>
-              <li>내용</li>
-            </ul>
-          </div>
-        </div>
+<!--          &lt;!&ndash;사진+제목+내용 박스&ndash;&gt;-->
+<!--          <div class="item__post">-->
+<!--            <img class="pic" src="https://picsum.photos/50" alt="" />-->
+<!--            <ul class="desc">-->
+<!--              <li class="item__post__desc__title">울산에서 피아노 개인 레슨 잘하시는 분 알려주세요</li>-->
+<!--              <li class="commu_text_">입시생입니다. 과외 선생님 소개 받아요.</li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </div>-->
 
 
-        <div class="item__main3">
-          <div class="item__cate">카테고리</div>
+<!--        <div class="item__main3">-->
+<!--          <div class="item__cate">궁금해요</div>-->
 
-          <!--사진+제목+내용 박스-->
-          <div class="item__post">
-            <img class="pic" src="https://picsum.photos/50" alt="" />
-            <ul class="desc">
-              <li class="item__post__desc__title">제목</li>
-              <li>내용</li>
-            </ul>
-          </div>
-        </div>
+<!--          &lt;!&ndash;사진+제목+내용 박스&ndash;&gt;-->
+<!--          <div class="item__post">-->
+<!--            <img class="pic" src="https://picsum.photos/50" alt="" />-->
+<!--            <ul class="desc">-->
+<!--              <li class="item__post__desc__title">커밋 인형 구매처 알려주실 분?</li>-->
+<!--              <li class="commu_text_">부산 살고 있는데 오프라인 구매처 혹시 아시면 알려주세요!! :)</li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </div>-->
 
 
       </div>

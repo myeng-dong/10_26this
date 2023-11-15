@@ -76,6 +76,7 @@ public class SignupController {
     member.setEmail(signupForm.getEmail());
     member.setPasswd(signupForm.getPasswd());
     member.setNickname(signupForm.getNickname());
+    member.setTel(signupForm.getTel());
     Member insert = memberSVC.insert(member);
 
     mv.setViewName("webPage/Login/success");
