@@ -71,7 +71,7 @@ public class FindSignController {
       str.append("<p>위 임시번호로 로그인후 비밀번호 변경 바랍니다.</p>");
       str.append("<a href='http://localhost:9080/login'>로그인</a>");
       str.append("</html>");
-      mailService.sendMail("naruplace19@gmail.com","임시비밀번호",str.toString());
+      mailService.sendMail(findPasswdForm.getEmail(),"임시비밀번호",str.toString());
       mv.addObject("success","회원님의 이메일로 임시비밀번호를 보냈습니다");
       mv.setViewName("webPage/Login/findPasswd");
     return mv;

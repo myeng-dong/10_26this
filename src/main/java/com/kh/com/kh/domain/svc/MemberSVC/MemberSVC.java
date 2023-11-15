@@ -24,4 +24,6 @@ public interface MemberSVC {
 
   int changePasswd(String email, String passwd);
 
+  Optional<String> findTelByTel(String tel);
+
 }

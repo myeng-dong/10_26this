@@ -80,9 +80,9 @@ public class MemberDAOImpl implements MemberDAO {
 
     StringBuffer sql = new StringBuffer();
 
-    sql.append("insert into member (member_id,email,passwd,nickname) ");
+    sql.append("insert into member (member_id,email,passwd,nickname,tel) ");
 
-    sql.append("             values(member_member_id_seq.nextval, :email, :passwd, :nickname) ");
+    sql.append("             values(member_member_id_seq.nextval, :email, :passwd, :nickname, :tel) ");
 
     SqlParameterSource param = new BeanPropertySqlParameterSource(member);
 
@@ -172,4 +172,22 @@ public class MemberDAOImpl implements MemberDAO {
 
   }
 
+  @Override
+  public Optional<String> findTelByTel(String tel) {
+    String findEmail = "select tel from member where tel= :tel ";
+
+    Map<String, String> mapString = Map.of("tel",tel);
+
+    try{
+
+      String findedTel = template.queryForObject(findEmail,mapString,String.class);
+
+      return Optional.of(findedTel);
+
+    }catch(EmptyResultDataAccessException e){
+
+      return Optional.empty();
+
+    }
+  }
 }

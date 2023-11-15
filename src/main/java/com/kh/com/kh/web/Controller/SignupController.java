@@ -43,9 +43,17 @@ public class SignupController {
       mv.setViewName("webPage/Login/signup");
       return mv;
     }
+    if (!signupForm.getPasswd().equals(signupForm.getPasswdCk())){
+      bindingResult.rejectValue("passwd","equal",null);
+      mv.setViewName("webPage/Login/signup");
+      return mv;
+    }
+
 
     Optional<Member> byMember = memberSVC.findByInfo(signupForm.getEmail());
     Boolean nicknameCNT = memberSVC.nickExist(signupForm.getNickname());
+    Optional<String> telByTel = memberSVC.findTelByTel(signupForm.getTel());
+
 
     if(!byMember.isEmpty()){
       bindingResult.rejectValue("email","equal",null);
@@ -55,6 +63,11 @@ public class SignupController {
     //nicknameCNT가 1일시 참이다 1이면 존재함으로 오류 발생
     if(nicknameCNT){
       bindingResult.rejectValue("nickname","equal",null);
+      mv.setViewName("webPage/Login/signup");
+      return mv;
+    }
+    if(!telByTel.isEmpty()){
+      bindingResult.rejectValue("tel","equal",null);
       mv.setViewName("webPage/Login/signup");
       return mv;
     }

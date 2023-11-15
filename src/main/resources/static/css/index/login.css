@@ -52,7 +52,7 @@ a{
 .login__form .form-wrap{
     position: relative;
     width: 450px;
-    height: calc(100vh - 260px);
+    height: 700px;
 }
 
 /*블럭레벨인 form 태그를 세로로 나열하고 싶다면*/

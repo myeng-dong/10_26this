@@ -18,24 +18,27 @@
       <div class="form nickname">
         <h4>닉네임</h4>
         <input class="txt txt_id" type="text" placeholder=" 닉네임(별명)을 입력하세요." name="nickname" th:field="*{nickname}">
-        <span class="field-error" th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}"></span>
+        <div class="field-error" th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}"></div>
       </div>
-      <div></div>
       <div class="form email">
         <h4>이메일</h4>
         <input class="txt txt_email" type="text" placeholder=" example@address.com" name="email" th:field="*{email}">
-        <span class="field-error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+        <div class="field-error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
       </div>
-      <div></div>
+      <div class="form tel">
+        <h4>전화번호</h4>
+        <input class="txt txt_tel" type="text" placeholder=" 010-xxxx-xxxx" name="tel" th:field="*{tel}">
+        <div class="field-error" th:if="${#fields.hasErrors('tel')}" th:errors="*{tel}"></div>
+      </div>
       <div class="form password_1">
         <h4>비밀번호</h4>
         <input class="txt txt_pw1" type="password" placeholder=" 6~20자 이하로 입력하세요." name="passwd" th:field="*{passwd}">
-        <span class="field-error" th:if="${#fields.hasErrors('passwd')}" th:errors="*{passwd}"></span>
+        <div class="field-error" th:if="${#fields.hasErrors('passwd')}" th:errors="*{passwd}"></div>
       </div>
       <div></div>
       <div class="form password_2">
         <h4>비밀번호 확인</h4>
-        <input class="txt txt_pw2" type="password" placeholder=" 비밀번호를 재입력하세요.">
+        <input class="txt txt_pw2" name="passwdCk" type="password" placeholder=" 비밀번호를 재입력하세요.">
       </div>
       <div></div>
 

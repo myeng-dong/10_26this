@@ -24,4 +24,6 @@ public interface MemberDAO {
 
   int changePasswd(String email, String passwd);
 
+  Optional<String> findTelByTel(String tel);
+
 }

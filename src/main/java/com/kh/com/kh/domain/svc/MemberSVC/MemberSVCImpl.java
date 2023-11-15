@@ -70,4 +70,8 @@ public class MemberSVCImpl implements MemberSVC {
 
   }
 
+  @Override
+  public Optional<String> findTelByTel(String tel) {
+    return memberDAO.findTelByTel(tel);
+  }
 }

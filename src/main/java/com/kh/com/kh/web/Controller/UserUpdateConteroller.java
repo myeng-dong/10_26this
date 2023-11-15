@@ -10,11 +10,14 @@ import com.kh.com.kh.web.form.userupdateForm.UpdateCKForm;
 import com.kh.com.kh.web.form.userupdateForm.UpdateForm;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
@@ -50,10 +53,17 @@ private final FileSVC fileSVC;
   // 회원 정보 수정
   @PostMapping
   public ModelAndView updateForm(
+      @Valid
+      @ModelAttribute
       UpdateCKForm updateCKForm,
+      BindingResult bindingResult,
       HttpSession session
   ){
     ModelAndView mv = new ModelAndView();
+    if (bindingResult.hasErrors()){
+      mv.setViewName("redirect:/update");
+      return mv;
+    }
     SessionForm sessionInfo = (SessionForm) session.getAttribute("sessionForm");
     log.info("sessionMember",sessionInfo.getMember_id());
     log.info("updateCK={}",updateCKForm);
